@@ -1,0 +1,15 @@
+﻿using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.AccessControl;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace E_CommerceAPI.Application.Features.Commands.Product.RemoveProduct
+{
+    public class RemoveProductCommandRequest:IRequest<RemoveProductCommandResponse>
+    {
+        public string Id { get; set; }
+    }
+}

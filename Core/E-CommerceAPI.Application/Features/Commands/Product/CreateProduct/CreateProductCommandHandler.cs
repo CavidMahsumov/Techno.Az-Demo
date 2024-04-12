@@ -19,14 +19,18 @@ namespace E_CommerceAPI.Application.Features.Commands.Product.CreateProduct
 
         public async Task<CreateProductCommandResponse> Handle(CreateProductCommandRequest request, CancellationToken cancellationToken)
         {
-            //await _productWriteRepository.AddAsync(new()
-            //{
-            //    Name = request.Name,
-            //    Price = request.Price,
-            //    Stock = request.Stock,
-            //});
-            //await _productWriteRepository.SaveAsync();
-            //return new();
+            await _productWriteRepository.AddAsync(new()
+            {
+                Name = request.Name,
+                Price = request.Price,
+                Stock = request.Stock,
+                CategoryId = request.CategoryId,
+                ProductImagePath = request.ProductImagePath,
+                VendorName = request.VendorName,
+                Description = request.Description,
+            });
+            await _productWriteRepository.SaveAsync();
+            return new();
             throw new NotImplementedException();
         }
     }
